@@ -4,7 +4,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   </head>
   <body>
-    
+      <section class="controls">
+        <h1 class="whats-for-din">What's for Dinner?</h1>
+        <button class="add-a-recipe">ADD A RECIPE</button>
+      </section>
+      <section class="boxes">
+        <div class="box">
+            <h2>What are you looking for?<span class="star">*</span></h2>
+            <ul>
+                <li><input name="same" type="radio"> Side</li>
+                <li><input name="same" type="radio"> Main Dish</li>
+                <li><input name="same" type="radio"> Dessert</li>
+                <li><input name="same" type="radio"> Entire Meal</li>
+            </ul>
+            <button class="lets-cook">LETS COOK!</button>
+        </div>
+        <div class="box2" >
+          <img src="./assets/cookpot.svg" height="125" width="125">
+          <div hidden>
+            <h2 class="should-make">You should make: </h2>
+            <text class="JS"> DATA </text>
+            <button class="clear">CLEAR</button>
+          </div>
+        </div>
+      </section>
+      <section>
+          <div class = "add-new">
+            <label>Recipe Type:
+              <input>
+            </label>
+            <label class="recipe-name">Recipe Name:
+              <input>
+            </label>
+            <button class="add-new-button">ADD NEW</button>
+          </div>
+      </section>
   </body>
   <script type="text/javascript" src="main.js"></script>
 </html>

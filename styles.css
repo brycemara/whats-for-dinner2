@@ -4,7 +4,148 @@ COLORS
 teal - #0fb9b1;
 frosted white - rgba(225, 225, 225, .9);
 grey - #95a5a6;
-red - #ee5253
+red - #ee5253 */
+body {
+  background-image: url("./assets/burger-friends.jpg");
+  background-size: 100%;
+  margin: 0;
+}
 
-*/
+.controls {
+  background: #0fb9b1;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
+h1 {
+  font-family: 'Roboto', sans-serif;
+  padding: 2px;
+}
+
+.add-a-recipe {
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  width: 150px;
+  height: 20px;
+  border-radius: 10px;
+  line-height: 5px;
+}
+
+.boxes {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px;
+}
+
+.box {
+  height: 300px;
+  width: 400px;
+  background-color: rgba(225, 225, 225, .9)
+}
+
+.box2 {
+  height: 300px;
+  width: 400px;
+  background-color: rgba(225, 225, 225, .9);
+  position: relative;
+}
+
+h2 {
+  padding-top: 20px;
+  padding-left: 30px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.star {
+  color: #ee5253;
+}
+
+.lets-cook {
+  height: 40px;
+  width: 170px;
+  margin-left: 50px;
+  border-color: #0fb9b1;
+  background-color: #0fb9b1;
+  border-radius: 10px;
+}
+
+ul {
+  padding-left: 40px;
+}
+
+li {
+  list-style-type: none;
+  margin: 10px;
+}
+
+
+img {
+  margin-left: 137.5px;
+  margin-top: 87.5px;
+}
+
+.should-make {
+  margin-bottom: 2px;
+  margin-top: 70px;
+  padding-top: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+}
+
+.JS {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+}
+
+.clear {
+  height: 30px;
+  width: 80px;
+  position: absolute;
+  right: 10;
+  bottom: 10;
+  background-color: #95a5a6;
+  color: rgba(225, 225, 225, .9);
+  border-color: rgba(225, 225, 225, .9);
+  border-radius: 10px;
+}
+
+.add-new {
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(225, 225, 225, .9);
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+label {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 20px;
+}
+.recipe-name {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 20px;
+}
+
+.add-new-button {
+  margin-top: 10px;
+  font-family: 'Roboto', sans-serif;
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  line-height: 5px;
+  background-color: #0fb9b1;
+}
