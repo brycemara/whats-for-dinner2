@@ -15,6 +15,7 @@ var letsCook = document.querySelector('.lets-cook');
 var sideChecked = document.querySelector('#side');
 var mainChecked = document.querySelector('#main');
 var dessertChecked = document.querySelector('#dessert');
+var entireMealChecked = document.querySelector('#entire-meal');
 
 // Event Listeners
 letsCook.addEventListener('click', checkId);
@@ -39,5 +40,7 @@ function checkId() {
     randomData.innerText = randomMain;
   } else if (dessertChecked.checked) {
     randomData.innerText = randomDessert;
-  };
+  } else if (entireMealChecked.checked) {
+    randomData.innerText = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`
+  }
 };
