@@ -16,9 +16,14 @@ var sideChecked = document.querySelector('#side');
 var mainChecked = document.querySelector('#main');
 var dessertChecked = document.querySelector('#dessert');
 var entireMealChecked = document.querySelector('#entire-meal');
+var radioList = document.querySelectorAll('.radios')
+
+// box 2
+var clearButton = document.querySelector('.clear');
 
 // Event Listeners
 letsCook.addEventListener('click', checkId);
+clearButton.addEventListener('click', clearTheSelection);
 
 // Some global variables
 var randomSide = sidesArray[getRandomIndex(sidesArray)];
@@ -33,6 +38,7 @@ function getRandomIndex(array) {
 function checkId() {
   potImage.classList.add('hidden');
   makeThis.classList.remove('hidden');
+  letsCook.classList.add('hidden');
 
   if (sideChecked.checked) {
     randomData.innerText = randomSide;
@@ -42,5 +48,24 @@ function checkId() {
     randomData.innerText = randomDessert;
   } else if (entireMealChecked.checked) {
     randomData.innerText = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`
+  } else {
+    alert("Please select an option")
+    potImage.classList.remove('hidden');
+    makeThis.classList.add("hidden");
+    letsCook.classList.remove('hidden');
+  }
+
+};
+
+
+function clearTheSelection() {
+  potImage.classList.remove('hidden');
+  makeThis.classList.add('hidden');
+  letsCook.classList.remove('hidden');
+
+  for (var i = 0; i < radioList.length; i++) {
+    if (radioList[i].checked) {
+      radioList[i].checked = false;
+    }
   }
 };
