@@ -12,24 +12,24 @@
         <div class="box">
             <h2>What are you looking for?<span class="star">*</span></h2>
             <ul>
-                <li><input name="same" type="radio"> Side</li>
-                <li><input name="same" type="radio"> Main Dish</li>
-                <li><input name="same" type="radio"> Dessert</li>
-                <li><input name="same" type="radio"> Entire Meal</li>
+                <li><input id="side" name="same" type="radio"> Side</li>
+                <li><input id="main" name="same" type="radio"> Main Dish</li>
+                <li><input id="dessert" name="same" type="radio"> Dessert</li>
+                <li><input id="entire-meal" name="same" type="radio"> Entire Meal</li>
             </ul>
             <button class="lets-cook">LETS COOK!</button>
         </div>
         <div class="box2" >
-          <img src="./assets/cookpot.svg" height="125" width="125">
-          <div hidden>
-            <h2 class="should-make">You should make: </h2>
-            <text class="JS"> DATA </text>
-            <button class="clear">CLEAR</button>
+              <img class="pot" src="./assets/cookpot.svg" height="125" width="125">
+          <div class="shouldmake hidden">
+              <h2 class="should-make">You should make: </h2>
+              <text class="JS"> DATA </text>
+              <button class="clear">CLEAR</button>
           </div>
         </div>
       </section>
-      <section>
-          <div class = "add-new">
+      <section class="hidden">
+          <div class="add-new">
             <label>Recipe Type:
               <input>
             </label>
