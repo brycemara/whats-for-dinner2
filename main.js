@@ -48,7 +48,13 @@ function checkId() {
     randomData.innerText = randomDessert;
   } else if (entireMealChecked.checked) {
     randomData.innerText = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`
+  } else {
+    alert("Please select an option")
+    potImage.classList.remove('hidden');
+    makeThis.classList.add("hidden");
+    letsCook.classList.remove('hidden');
   }
+
 };
 
 
