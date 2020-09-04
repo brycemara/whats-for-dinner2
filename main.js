@@ -89,16 +89,15 @@ function displayAddRecipeInputs() {
 function addNewRecipeToArrays() {
   if (sideOption.selected) {
     sidesArray.push(userNameInput.value);
-    alert('Your New Side has been added!')
   } else if (mainOption.selected) {
     mainsArray.push(userNameInput.value);
-    alert('Your New Main Dish has been added!')
   } else if (dessertOption.selected) {
     dessertsArray.push(userNameInput.value)
-    alert('Your New Dessert has been added!')
   } else if (blankOption.selected) {
     alert("Oops! Make sure you select a Recipe Type!")
-
+  }
+  if (userNameInput.value === '') {
+    alert("Oops! Make sure you select a Recipe Name!")
   }
   userNameInput.value = '';
   userTypeInput = (blankOption.selected = true);
