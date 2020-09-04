@@ -21,9 +21,22 @@ var radioList = document.querySelectorAll('.radios')
 // box 2
 var clearButton = document.querySelector('.clear');
 
+// Add recipe
+var addRecipeButton = document.querySelector('.add-a-recipe');
+var addNewButton = document.querySelector('.add-new-button');
+var userNameInput = document.querySelector('.add-new-name');
+var userTypeInput = document.querySelector('.type');
+var sideOption = document.querySelector('.item-1')
+var mainOption = document.querySelector('.item-2')
+var dessertOption = document.querySelector('.item-3')
+var entireMealOption = document.querySelector('.item-4')
+var blankOption = document.querySelector('.blank');
+
 // Event Listeners
 letsCook.addEventListener('click', checkId);
 clearButton.addEventListener('click', clearTheSelection);
+addRecipeButton.addEventListener('click', displayAddRecipeInputs);
+addNewButton.addEventListener('click', addNewRecipeToArrays);
 
 // Some global variables
 var randomSide = sidesArray[getRandomIndex(sidesArray)];
@@ -57,7 +70,6 @@ function checkId() {
 
 };
 
-
 function clearTheSelection() {
   potImage.classList.remove('hidden');
   makeThis.classList.add('hidden');
@@ -68,4 +80,26 @@ function clearTheSelection() {
       radioList[i].checked = false;
     }
   }
+};
+
+function displayAddRecipeInputs() {
+  document.querySelector('.newrecipe').classList.toggle('hidden');
+}
+
+function addNewRecipeToArrays() {
+  if (sideOption.selected) {
+    sidesArray.push(userNameInput.value);
+    alert('Your New Side has been added!')
+  } else if (mainOption.selected) {
+    mainsArray.push(userNameInput.value);
+    alert('Your New Main Dish has been added!')
+  } else if (dessertOption.selected) {
+    dessertsArray.push(userNameInput.value)
+    alert('Your New Dessert has been added!')
+  } else if (blankOption.selected) {
+    alert("Oops! Make sure you select a Recipe Type!")
+
+  }
+  userNameInput.value = '';
+  userTypeInput = (blankOption.selected = true);
 };

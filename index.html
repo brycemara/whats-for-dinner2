@@ -28,13 +28,19 @@
           </div>
         </div>
       </section>
-      <section class="hidden">
+      <section class="newrecipe hidden">
           <div class="add-new">
-            <label>Recipe Type:
-              <input>
+            <label id="items">Recipe Type:
+              <select class="type">
+                <option class="blank"></option>
+                <option class="item-1">Side</option>
+                <option class="item-2">Main Dish</option>
+                <option class="item-3">Dessert</option>
+                <option class="item-4">Entire Meal</option>
+              </select>
             </label>
             <label class="recipe-name">Recipe Name:
-              <input>
+              <input class="add-new-name" type="text" id="addNewName" >
             </label>
             <button class="add-new-button">ADD NEW</button>
           </div>
