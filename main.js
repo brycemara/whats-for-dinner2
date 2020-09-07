@@ -54,15 +54,6 @@ for (var i = 0; i < arrayDisplays.length; i++)
 function checkId() {
   toggleHidden();
 
-  // var randomArrayCheck = [sideChecked, mainChecked, dessertChecked];
-  // console.log(randomArrayCheck)
-  // for (var i = 0; i < randomArrayCheck.length; i++) {
-  //   if (randomArrayCheck[i].checked === true) {
-  //     randomData.innerText = randomArrayCheck[i];
-  //     console.log(randomData.innerText)
-  //   }
-  // }
-
   if (sideChecked.checked) {
     randomData.innerText = randomSide;
   } else if (mainChecked.checked) {
