@@ -7,7 +7,7 @@ var dessertsArray = ["Apple Pie", "Lemon Meringue Pie", "Black Forest Cake", "Ba
 var potImage = document.querySelector('.pot');
 var makeThis = document.querySelector('.shouldmake');
 
-// box 1 stuff
+// Box 1
 var letsCook = document.querySelector('.lets-cook-button');
 var sideChecked = document.querySelector('#side');
 var mainChecked = document.querySelector('#main');
@@ -15,11 +15,11 @@ var dessertChecked = document.querySelector('#dessert');
 var entireMealChecked = document.querySelector('#entire-meal');
 var radioList = document.querySelectorAll('.radios');
 
-// box 2
+// Box 2
 var clearButton = document.querySelector('.clear-button');
 var randomData = document.querySelector('.place-holder');
 
-// Add recipe
+// Add recipe controls
 var addRecipeButton = document.querySelector('.add-a-recipe');
 var addNewButton = document.querySelector('.add-new-button');
 var userNameInput = document.querySelector('.add-new-name');
@@ -46,28 +46,25 @@ function getRandomIndex(array) {
 };
 
 function toggleHidden() {
-var arrayDisplays = [potImage, makeThis, letsCook]
-for (var i = 0; i < arrayDisplays.length; i++)
-  arrayDisplays[i].classList.toggle('hidden');
+  var arrayDisplays = [potImage, makeThis, letsCook]
+  for (var i = 0; i < arrayDisplays.length; i++)
+    arrayDisplays[i].classList.toggle('hidden');
+};
+
+function pleaseSelectOption() {
+  alert("Oops! Please choose an option!");
+  toggleHidden();
 };
 
 function checkId() {
   toggleHidden();
 
-  if (sideChecked.checked) {
-    randomData.innerText = randomSide;
-  } else if (mainChecked.checked) {
-    randomData.innerText = randomMain;
-  } else if (dessertChecked.checked) {
-    randomData.innerText = randomDessert;
-  } else if (entireMealChecked.checked) {
-    randomData.innerText = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`
-  } else {
-    alert("Oops! Please choose an option!");
-    toggleHidden();
-  };
+  (sideChecked.checked === true) ? randomData.innerText = randomSide
+  : (mainChecked.checked === true) ? randomData.innerText = randomMain
+  : (dessertChecked.checked === true) ? randomData.innerText = randomDessert
+  : (entireMealChecked.checked === true) ? randomData.innerText = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`
+  : pleaseSelectOption();
 };
-
 
 function clearTheSelection() {
   toggleHidden();
@@ -81,7 +78,7 @@ function clearTheSelection() {
 
 function displayAddRecipeInputs() {
   document.querySelector('.newrecipe').classList.toggle('hidden');
-}
+};
 
 function addNewRecipeToArrays() {
 
@@ -97,6 +94,7 @@ function addNewRecipeToArrays() {
   if (userNameInput.value === '') {
     alert("Oops! Make sure you select a Recipe Name!")
   };
+
   userNameInput.value = '';
   userTypeInput = (blankOption.selected = true);
 };
