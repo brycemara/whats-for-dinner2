@@ -3,33 +3,30 @@ var sidesArray = ["Miso Glazed Carrots", "Coleslaw", "Garden Salad", "Crispy Pot
 var mainsArray = ["Spaghetti and Meatballs", "Pineapple Chicken", "Shakshuka", "Thai Yellow Curry", "Bibimbap", "Chicken Parmesean", "Butternut Squash Soup", "BBQ Chicken Burgers", "Ramen", "Empanadas", "Chicken Fried Rice", "Sheet Pan Fajitas", "Margarita Pizza"]
 var dessertsArray = ["Apple Pie", "Lemon Meringue Pie", "Black Forest Cake", "Banana Bread", "Peach Cobbler", "Cheesecake", "Funfetti Cake", "Baklava", "Flan", "Macarons", "Macaroons", "Chocolate Cupcakes", "Pavlova", "Pumpkin Pie", "Key Lime Pie", "Tart Tatin", "Croissants", "Eclairs"]
 
-
-
 // Query selectors
 var potImage = document.querySelector('.pot');
 var makeThis = document.querySelector('.shouldmake');
-var randomData = document.querySelector('.JS')
 
 // box 1 stuff
-var letsCook = document.querySelector('.lets-cook');
+var letsCook = document.querySelector('.lets-cook-button');
 var sideChecked = document.querySelector('#side');
 var mainChecked = document.querySelector('#main');
 var dessertChecked = document.querySelector('#dessert');
 var entireMealChecked = document.querySelector('#entire-meal');
-var radioList = document.querySelectorAll('.radios')
+var radioList = document.querySelectorAll('.radios');
 
 // box 2
-var clearButton = document.querySelector('.clear');
+var clearButton = document.querySelector('.clear-button');
+var randomData = document.querySelector('.place-holder');
 
 // Add recipe
 var addRecipeButton = document.querySelector('.add-a-recipe');
 var addNewButton = document.querySelector('.add-new-button');
 var userNameInput = document.querySelector('.add-new-name');
 var userTypeInput = document.querySelector('.type');
-var sideOption = document.querySelector('.item-1')
-var mainOption = document.querySelector('.item-2')
-var dessertOption = document.querySelector('.item-3')
-var entireMealOption = document.querySelector('.item-4')
+var sideOption = document.querySelector('.item-1');
+var mainOption = document.querySelector('.item-2');
+var dessertOption = document.querySelector('.item-3');
 var blankOption = document.querySelector('.blank');
 
 // Event Listeners
@@ -48,10 +45,14 @@ function getRandomIndex(array) {
   return Math.floor(Math.random() * array.length);
 };
 
+function toggleHidden() {
+var arrayDisplays = [potImage, makeThis, letsCook]
+for (var i = 0; i < arrayDisplays.length; i++)
+  arrayDisplays[i].classList.toggle('hidden');
+};
+
 function checkId() {
-  potImage.classList.add('hidden');
-  makeThis.classList.remove('hidden');
-  letsCook.classList.add('hidden');
+  toggleHidden();
 
   if (sideChecked.checked) {
     randomData.innerText = randomSide;
@@ -62,18 +63,14 @@ function checkId() {
   } else if (entireMealChecked.checked) {
     randomData.innerText = `${randomMain} with a side of ${randomSide} and ${randomDessert} for dessert!`
   } else {
-    alert("Please select an option")
-    potImage.classList.remove('hidden');
-    makeThis.classList.add("hidden");
-    letsCook.classList.remove('hidden');
-  }
-
+    alert("Oops! Please choose an option!");
+    toggleHidden();
+  };
 };
 
+
 function clearTheSelection() {
-  potImage.classList.remove('hidden');
-  makeThis.classList.add('hidden');
-  letsCook.classList.remove('hidden');
+  toggleHidden();
 
   for (var i = 0; i < radioList.length; i++) {
     if (radioList[i].checked) {
@@ -87,6 +84,7 @@ function displayAddRecipeInputs() {
 }
 
 function addNewRecipeToArrays() {
+
   if (sideOption.selected) {
     sidesArray.push(userNameInput.value);
   } else if (mainOption.selected) {
@@ -98,7 +96,7 @@ function addNewRecipeToArrays() {
   }
   if (userNameInput.value === '') {
     alert("Oops! Make sure you select a Recipe Name!")
-  }
+  };
   userNameInput.value = '';
   userTypeInput = (blankOption.selected = true);
 };
